@@ -4,7 +4,7 @@
   --bg-light-blue-50: rgba(10, 174, 245, 0.5);
   --bg-light-gray: rgb(186, 190, 200);
 }
-.d{
+.d {
   display: none;
 }
 * {
@@ -20,7 +20,7 @@ body {
 .container {
   padding: 0 10%;
 }
-.dropdown{
+.dropdown {
   display: none;
 }
 a {
@@ -105,14 +105,14 @@ a {
   stroke-width: 10px;
 }
 header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  
+
   background: var(--bg-light-blue);
   padding: 0.75rem 0;
   z-index: 5;
 }
-header .container{
+header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -172,6 +172,9 @@ header .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+}
+#it-solutions img {
+  max-width: 90%;
 }
 #it-solutions .social-media a {
   margin-right: 1rem;
@@ -477,9 +480,7 @@ header .buttons {
   background-color: var(--bg-light-blue);
 }
 #clients .clients {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  column-gap: 1rem;
+   
   margin-top: 3rem;
 }
 .clients img {
@@ -592,18 +593,19 @@ header .buttons {
   justify-content: space-between;
 }
 #pricingplans .plans {
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; */
+  justify-content: center;
+  flex-wrap: wrap;
+  /* justify-items: center;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); */
   gap: 1rem;
 }
 #pricingplans .plans .card {
   border: 1px solid var(--bg-light-blue);
   padding: 1rem;
-  width: 332px;
+  width: 315px;
   margin: 2rem 0;
   border-radius: 10px 10px 0 0;
 }
@@ -916,16 +918,16 @@ footer .footer form button {
 .copyright {
   margin-top: 3rem;
 }
-.mobile-menubtn{
+.mobile-menubtn {
   display: none;
 }
-.mobile-menubtn-label{
-display: none;
+.mobile-menubtn-label {
+  display: none;
 }
-header .logo{
+header .logo {
   flex: 1;
 }
-.menu{
+.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -939,49 +941,60 @@ header .logo{
   .container {
     padding: 0 5%;
   }
-  header{
+  .header {
+    flex-wrap: wrap;
+    align-items: start !important; 
+    margin-bottom: 2rem;
+  }
+  header {
     position: relative;
   }
-  .mobile-menubtn-label{
+  .mobile-menubtn-label {
     display: block;
   }
-  .mobile-menubtn:checked ~ nav{
+  .mobile-menubtn:checked ~ nav {
     display: block;
   }
-  .menu{
+  .menu {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: flex-end;
   }
-  header nav{
+  header nav {
     border-top: 3px solid var(--bg-dark-blue);
     background: var(--bg-light-blue);
-    width: 100%; 
+    width: 100%;
     display: none;
     position: absolute;
     top: 60px;
     left: 0;
     padding: 2rem;
   }
-  .dropdown{
-    display: none; 
+  .dropdown {
+    display: none;
   }
-  .dropdown li{
+  .dropdown li {
     padding: 0.75rem;
   }
-  header nav ul{
+  header nav ul {
     flex-direction: column;
   }
 
+  #it-solutions .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 
-
-  #about-us .container{
+  #about-us .container {
     flex-wrap: wrap;
-  } 
-  #why-choose-us .container{
+  }
+  #about-us .about-us .cards {
+    grid-template-columns: 1fr;
+  }
+  #why-choose-us .container {
     flex-wrap: wrap-reverse;
-  } 
+  }
   #clients .clients {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1007,51 +1020,60 @@ header .logo{
   .container {
     padding: 0 0;
   }
-  header{
+  header {
     position: relative;
   }
-  .mobile-menubtn-label{
+  .mobile-menubtn-label {
     display: block;
   }
-  .mobile-menubtn:checked ~ nav{
+  .mobile-menubtn:checked ~ nav {
     display: block;
   }
-  .menu{
+  .menu {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: flex-end;
   }
-  header nav{
+  header nav {
     border-top: 3px solid var(--bg-dark-blue);
     background: var(--bg-light-blue);
-    width: 100%; 
+    width: 100%;
     display: none;
     position: absolute;
     top: 60px;
     left: 0;
     padding: 2rem;
   }
-  .dropdown{
-    display: none; 
+  .dropdown {
+    display: none;
   }
-  .dropdown li{
+  .dropdown li {
     padding: 0.75rem;
   }
-  header nav ul{
+  header nav ul {
     flex-direction: column;
   }
-
+  #it-solutions .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 
   #about-us .container {
     flex-wrap: wrap;
-  }  
-  #why-choose-us .container{
-    flex-wrap: wrap-reverse;
-  } 
-  .header{
-    flex-wrap: wrap;
   }
+  #about-us .about-us .cards {
+    grid-template-columns: 1fr;
+  }
+  #why-choose-us .container {
+    flex-wrap: wrap-reverse;
+  }
+  .header {
+    flex-wrap: wrap;
+    align-items: start !important; 
+    margin-bottom: 2rem;
+  }
+  #it-solutions .container,
   #portfolio .items,
   #clients .clients,
   #services .services,

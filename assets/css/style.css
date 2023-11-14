@@ -174,8 +174,12 @@ header .buttons {
 }
 
 .btn-theme {
-  padding: 5px;
+  padding: 5px 7px;
   font-size: 1em;
+  color: var(--bg-light-blue);
+  background: white;
+  border: none;
+  border-radius: 5px;
 }
 #it-solutions {
   background-image: url(/assets/img/pattern-bg-1.jpg);
@@ -472,13 +476,11 @@ header .buttons {
 }
 
 #our-work {
-  height: 450px;
-  position: relative;
   margin: 5rem 0rem;
   background-image: url(../img/pattern-bg-2.jpg);
 }
 
-#our-work .wrapper {
+#our-work .container {
   height: 100%;
   background-color: rgba(6, 8, 35, 0.6);
 }
@@ -486,14 +488,11 @@ header .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 250px);
+  align-content: center;
   gap: 1rem;
-
+  padding: 1rem 0;
   width: 100%;
-
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  height: 100%;
 }
 
 .our-work .card {
@@ -737,8 +736,7 @@ header .buttons {
 #testimonials {
   position: relative;
   background-image: url("../img/pattern-bg-4");
-  background-attachment: fixed;
-  height: 500px;
+  background-attachment: fixed; 
 }
 
 
@@ -754,12 +752,12 @@ header .buttons {
   text-align: center;
 }
 #testimonials .testimonial-container {
-  width: 700px;
+  width: 100%;
   margin: 3rem auto;
 }
 #testimonials .testimonials {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 100% 100%;
   grid-template-rows: 1fr;
   width: 100%;
   overflow: hidden;
@@ -769,7 +767,7 @@ header .buttons {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  width: 700px;
+  width: 100%;
 }
 #testimonials .testimonials .testimonial .testimonial-img {
   width: 80px;
@@ -782,6 +780,7 @@ header .buttons {
 }
 #testimonials .testimonials .testimonial .testimonial-text {
   text-align: center;
+  width: 50%;
 }
 #testimonials .testimonials .testimonial .testimonial-author p {
   color: var(--bg-light-gray);
@@ -810,7 +809,7 @@ header .buttons {
   ~ .testimonial-container
   .testimonials
   .testimonial {
-  transform: translate(-700px);
+  transform: translate(-100%);
   transition: transform 1s ease-in;
 }
 
@@ -879,12 +878,14 @@ header .buttons {
 
 footer {
   background-image: url("/assets/img/pattern-bg-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 footer .footer {
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
-  background: #00000070;
+  background: #000000a9;
   gap: 1rem;
   padding-top: 2rem;
 }

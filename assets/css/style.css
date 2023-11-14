@@ -1,7 +1,7 @@
 :root {
   --bg-dark-blue: rgb(6, 8, 35);
-  --bg-light-blue: rgb(10, 174, 245);
-  --bg-light-blue-50: rgba(10, 174, 245, 0.5);
+  --bg-light-blue: #08aff5;
+  --bg-light-blue-50: rgba(8, 175, 245, 0.5);
   --bg-light-gray: rgb(186, 190, 200);
 }
 .d {
@@ -66,8 +66,12 @@ a {
   color: var(--bg-light-blue);
   background-color: transparent;
 }
+.header{
+  margin: 2rem 0;
+}
 .header .title {
   font-size: 3em;
+  font-weight: 500;
 }
 
 .header .subtitle {
@@ -104,6 +108,15 @@ a {
   fill: transparent;
   stroke-width: 10px;
 }
+
+.illustration-container{
+  margin: auto; 
+}
+.illustration-container img{
+  width:90%;
+}
+
+
 header {
   /* position: fixed; */
   width: 100%;
@@ -248,8 +261,7 @@ header .buttons {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-#services .header {
-  height: 200px;
+#services .header { 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -262,7 +274,9 @@ header .buttons {
   color: var(--bg-light-blue);
   background-color: transparent;
 }
-
+#services .services{
+  margin-top: 2rem;
+}
 #services .card {
   border: 1px solid var(--bg-light-blue);
   border-radius: 10px;
@@ -286,12 +300,34 @@ header .buttons {
 #services .card:hover::before {
   width: 100%;
 }
-.card .card-img {
+#services .card .card-img {
   width: 64px;
   height: 64px;
+  background: var(--bg-light-blue);
+}
+#services .card.web .card-img{
   -webkit-mask-image: url(/assets/img/web-programming.png);
   mask-image: url(/assets/img/web-programming.png);
-  background: var(--bg-light-blue);
+} 
+#services .card.digital .card-img{
+  -webkit-mask-image: url(/assets/img/digital-icon.png);
+  mask-image: url(/assets/img/digital-icon.png);
+} 
+#services .card.saas .card-img{
+  -webkit-mask-image: url(/assets/img/web-domain.png);
+  mask-image: url(/assets/img/web-domain.png);
+}
+#services .card.app-dev .card-img{
+  -webkit-mask-image: url(/assets/img/user-gear.png);
+  mask-image: url(/assets/img/user-gear.png);
+}
+#services .card.seo .card-img{
+  -webkit-mask-image: url(/assets/img/loupe.png);
+  mask-image: url(/assets/img/loupe.png);
+}
+#services .card.data .card-img{
+  -webkit-mask-image: url(/assets/img/strategy.png);
+  mask-image: url(/assets/img/strategy.png);
 }
 #services .card h3 {
   font-size: 1.5em;
@@ -335,24 +371,23 @@ header .buttons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-#about-us img {
-  width: 100%;
-}
+} 
 #about-us .about-us .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  flex-wrap: wrap;
   gap: 1rem;
 }
 #about-us .card {
   display: flex;
   gap: 1rem;
+  width: 48%;
 }
 #about-us .card .icon {
   color: var(--bg-light-blue);
   background-color: var(--bg-light-blue-50);
   border-radius: 5px;
-  width: 50px;
+  width: 120px;
   height: 50px;
   display: grid;
   place-content: center;
@@ -407,8 +442,7 @@ header .buttons {
 #why-choose-us p {
   margin: 1rem 0 2rem;
 }
-#why-choose-us img {
-  width: 100%;
+#why-choose-us img { 
   margin-bottom: -0.7rem;
 }
 #why-choose-us ol h4 {
@@ -494,10 +528,9 @@ header .buttons {
 }
 
 #portfolio {
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
-#portfolio .header {
-  height: 200px;
+#portfolio .header { 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -586,7 +619,12 @@ header .buttons {
   transform: translateX(0px);
   transition: transform 0.3s 0.3s linear;
 }
-
+#pricingplans{
+  margin: 3rem 0;
+}
+#pricingplans .plans .card.best-plan .plan-header::after {
+  background-color: white !important;
+}
 #pricingplans .container .header {
   display: flex;
   align-items: center;
@@ -596,10 +634,7 @@ header .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  /* justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); */
+  flex-wrap: wrap; 
   gap: 1rem;
 }
 #pricingplans .plans .card {
@@ -668,21 +703,36 @@ header .buttons {
   color: white;
 }
 
-.best-plan {
+#pricingplans .best-plan {
   background: var(--bg-light-blue);
   color: white;
+  overflow: hidden;
+  position: relative;
 }
-.best-plan sup {
+#pricingplans .best-plan sup {
   color: white !important;
 }
-.best-plan button {
+#pricingplans .best-plan button {
   border-color: white;
   color: white !important;
 }
 
-.best-plan button:hover {
+#pricingplans .best-plan button:hover {
   background: white !important;
   color: var(--bg-light-blue) !important;
+}
+#pricingplans .best-plan::after{
+  content: "Most Important";
+  background: white;
+  color: var(--bg-light-blue);
+  width: 200px;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  transform: rotateZ(42deg);
+  position: absolute;
+  top: 43px;
+  right: -40px;
 }
 #testimonials {
   position: relative;
@@ -690,9 +740,7 @@ header .buttons {
   background-attachment: fixed;
   height: 500px;
 }
-#pricingplans .plans .card.best-plan .plan-header::after {
-  background-color: white !important;
-}
+
 
 #testimonials .container {
   background: #0009;
@@ -837,6 +885,7 @@ footer .footer {
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
   background: #00000070;
+  gap: 1rem;
   padding-top: 2rem;
 }
 footer .footer form {
@@ -845,9 +894,11 @@ footer .footer form {
 footer .footer form label {
   font-weight: 500;
 }
-footer .footer form input[type="email"] {
-  width: 80%;
-  float: left;
+footer .footer form div{
+  display: flex;
+}
+footer .footer form input[type="email"] { 
+  flex: 3;
   border: 0;
   color: #fff;
   height: 50px;
@@ -859,7 +910,7 @@ footer .footer form input[type="email"]::placeholder {
   color: #fff;
 }
 footer .footer form button {
-  width: 15%;
+  flex: 1;
   background-color: var(--bg-light-blue);
   color: white;
   height: 50px;

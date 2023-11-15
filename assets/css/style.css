@@ -1,11 +1,10 @@
 :root {
-  --bg-dark-blue: rgb(6, 8, 35);
-  --bg-light-blue: #08aff5;
-  --bg-light-blue-50: rgba(8, 175, 245, 0.5);
-  --bg-light-gray: rgb(186, 190, 200);
-}
-.d {
-  display: none;
+  --dark-blue: rgb(6, 8, 35);
+  --light-blue: #08aef5;
+  --light-blue-50: rgba(8, 175, 245, 0.5);
+  --light-gray: rgb(186, 190, 200);
+  scroll-behavior: smooth;
+  font-weight: normal;
 }
 * {
   margin: 0;
@@ -14,12 +13,10 @@
   font-family: "Jost", sans-serif;
 }
 body {
-  background-color: var(--bg-dark-blue);
+  background-color: var(--dark-blue);
   color: white;
 }
-.container {
-  padding: 0 10%;
-}
+
 .dropdown {
   display: none;
 }
@@ -31,7 +28,8 @@ a {
   transition: transform 0.3s linear;
 }
 .section-name {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
+  font-weight: 600;
 }
 .section-name::before,
 .section-name::after {
@@ -39,16 +37,16 @@ a {
   width: 5px;
   height: 5px;
   display: inline-block;
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   border-radius: 50%;
-  margin: 0 2px 2px 0;
+  margin: 2px 4px;
 }
 .diagonal-rounded-border {
   border-radius: 0px 18px 0px 12px;
 }
 
 .btn {
-  border: 2px solid var(--bg-light-blue);
+  border: 2px solid var(--light-blue);
   font-weight: 500;
   font-family: "Jost", sans-serif;
   padding: 0.75rem 2.25rem;
@@ -58,30 +56,33 @@ a {
 }
 
 .btn-blue {
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   color: white;
 }
 
 .btn-blue:hover {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   background-color: transparent;
 }
-.header{
+.header {
   margin: 2rem 0;
+  gap: 1rem;
 }
+
 .header .title {
   font-size: 3em;
   font-weight: 500;
 }
 
 .header .subtitle {
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
   font-weight: 500;
+  width: 90%;
 }
 
 .highlight {
   position: relative;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 .highlight .wavey-underline {
   position: absolute;
@@ -91,8 +92,8 @@ a {
   width: 100%;
 }
 .highlight svg path {
-  stroke: var(--bg-light-blue);
-  fill: var(--bg-light-blue);
+  stroke: var(--light-blue);
+  fill: var(--light-blue);
 
   width: 100%;
 }
@@ -109,19 +110,29 @@ a {
   stroke-width: 10px;
 }
 
-.illustration-container{
-  margin: auto; 
+.illustration-container {
+  margin: auto;
 }
-.illustration-container img{
-  width:90%;
+.illustration-container img {
+  width: 90%;
 }
 
-
+.go-up a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  background: var(--light-blue);
+  color: white;
+  z-index: 999;
+}
 header {
   /* position: fixed; */
   width: 100%;
 
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   padding: 0.75rem 0;
   z-index: 5;
 }
@@ -130,6 +141,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header nav ul {
   display: flex;
   gap: 2rem;
@@ -142,14 +154,14 @@ header nav ul li a {
   font-weight: bold;
 }
 header nav ul li a.active {
-  color: var(--bg-dark-blue);
+  color: var(--dark-blue);
 }
 header nav ul li a.active::before {
   content: "";
   width: 5px;
   height: 5px;
   display: inline-block;
-  background: var(--bg-dark-blue);
+  background: var(--dark-blue);
   border-radius: 50%;
   margin: 0 2px 2px 0;
 }
@@ -176,19 +188,24 @@ header .buttons {
 .btn-theme {
   padding: 5px 7px;
   font-size: 1em;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   background: white;
   border: none;
   border-radius: 5px;
 }
 #it-solutions {
-  background-image: url(/assets/img/pattern-bg-1.jpg);
+  background-image: url(../img/pattern-bg-1.jpg);
 }
 #it-solutions .container {
   background: rgb(6, 8, 35, 0.6);
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
+}
+#it-solutions .title {
+  font-weight: 500;
+}
+#it-solutions .subtitle {
+  padding: 1rem 0;
 }
 #it-solutions img {
   max-width: 90%;
@@ -199,15 +216,15 @@ header .buttons {
   color: white;
 }
 #it-solutions .social-media a:hover {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 
 #it-solutions .btn-start {
   background: transparent;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #it-solutions .btn-start:hover {
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   color: white;
 }
 #it-solutions .buttons {
@@ -218,7 +235,7 @@ header .buttons {
 #it-solutions .container .play-btn {
   width: 50px;
   height: 50px;
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   color: white;
   border-radius: 50%;
   display: grid;
@@ -228,10 +245,10 @@ header .buttons {
 }
 #it-solutions .container .play-btn::before {
   animation-delay: 0.6s !important;
-  background: var(--bg-light-blue-50);
+  background: var(--light-blue-50);
 }
 #it-solutions .container .play-btn::after {
-  background: var(--bg-light-blue-50);
+  background: var(--light-blue-50);
 }
 #it-solutions .container .play-btn::before,
 #it-solutions .container .play-btn::after {
@@ -262,38 +279,46 @@ header .buttons {
 }
 #services .services {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-#services .header { 
+#services .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 #services .header button {
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   color: #fff;
 }
 #services .header button:hover {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   background-color: transparent;
 }
-#services .services{
+#services .services {
   margin-top: 2rem;
 }
 #services .card {
-  border: 1px solid var(--bg-light-blue);
+  border: 1px solid var(--light-blue);
   border-radius: 10px;
   padding: 25px;
   position: relative;
 }
-
+#services .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+#services .card .card-body p {
+  color: var(--light-gray);
+  font-weight: 500;
+}
 #services .card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   border-radius: 10px;
   height: 100%;
   width: 0%;
@@ -305,35 +330,16 @@ header .buttons {
   width: 100%;
 }
 #services .card .card-img {
-  width: 64px;
-  height: 64px;
-  background: var(--bg-light-blue);
+  width: 54px;
+  height: 54px;   
 }
-#services .card.web .card-img{
-  -webkit-mask-image: url(/assets/img/web-programming.png);
-  mask-image: url(/assets/img/web-programming.png);
-} 
-#services .card.digital .card-img{
-  -webkit-mask-image: url(/assets/img/digital-icon.png);
-  mask-image: url(/assets/img/digital-icon.png);
-} 
-#services .card.saas .card-img{
-  -webkit-mask-image: url(/assets/img/web-domain.png);
-  mask-image: url(/assets/img/web-domain.png);
+#services .card svg{
+  width: 54px;
+  height: 54px;
 }
-#services .card.app-dev .card-img{
-  -webkit-mask-image: url(/assets/img/user-gear.png);
-  mask-image: url(/assets/img/user-gear.png);
-}
-#services .card.seo .card-img{
-  -webkit-mask-image: url(/assets/img/loupe.png);
-  mask-image: url(/assets/img/loupe.png);
-}
-#services .card.data .card-img{
-  -webkit-mask-image: url(/assets/img/strategy.png);
-  mask-image: url(/assets/img/strategy.png);
-}
+ 
 #services .card h3 {
+  font-weight: 600;
   font-size: 1.5em;
 }
 #services .card .btn {
@@ -342,7 +348,7 @@ header .buttons {
   gap: 0.5rem;
   background-color: transparent;
   border: none;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   padding-left: 0px;
 }
 #services .card .btn:hover {
@@ -351,8 +357,10 @@ header .buttons {
 #services .card .btn i {
   padding-top: 3px;
 }
-#services .card:hover .card-img {
-  background-color: white;
+#services .card:hover .card-img svg path{
+  fill: white;
+  transition: fill 0.2s linear;
+
 }
 #services .card:hover .btn {
   color: white;
@@ -375,21 +383,23 @@ header .buttons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-} 
+}
 #about-us .about-us .cards {
   display: flex;
-  /* grid-template-columns: 1fr 1fr; */
   flex-wrap: wrap;
   gap: 1rem;
 }
 #about-us .card {
   display: flex;
   gap: 1rem;
-  width: 48%;
+}
+#about-us a:hover {
+  color: var(--light-blue);
+  background-color: transparent;
 }
 #about-us .card .icon {
-  color: var(--bg-light-blue);
-  background-color: var(--bg-light-blue-50);
+  color: var(--light-blue);
+  background-color: var(--light-blue-50);
   border-radius: 5px;
   width: 120px;
   height: 50px;
@@ -397,20 +407,14 @@ header .buttons {
   place-content: center;
   font-size: 1.25em;
 }
-#about-us .about-us .card .card h4 {
+#about-us .about-us .cards .card h4 {
   font-size: 1.5em;
 }
 #about-us .about-us .cards .card p {
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
   font-weight: 500;
 }
 
-#about-us .card:hover .icon {
-  transform: translateY(-10px);
-  background: var(--bg-light-blue);
-  color: white;
-  transition: all 0.3s linear;
-}
 #about-us .footer {
   display: flex;
   align-items: center;
@@ -424,17 +428,12 @@ header .buttons {
   margin-bottom: -0.7rem;
 }
 #about-us .footer {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #about-us a {
   color: white;
   text-decoration: none;
-  background-color: var(--bg-light-blue);
-}
-
-#about-us a:hover {
-  color: var(--bg-light-blue);
-  background-color: transparent;
+  background-color: var(--light-blue);
 }
 
 #why-choose-us .container {
@@ -444,9 +443,9 @@ header .buttons {
   margin: 5rem 0;
 }
 #why-choose-us p {
-  margin: 1rem 0 2rem;
+  margin-bottom: 2rem;
 }
-#why-choose-us img { 
+#why-choose-us img {
   margin-bottom: -0.7rem;
 }
 #why-choose-us ol h4 {
@@ -463,7 +462,7 @@ header .buttons {
   counter-increment: li;
 }
 #why-choose-us ol li::marker {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   font-weight: 500;
   content: "0" counter(li) ".";
   font-size: 3em;
@@ -486,8 +485,6 @@ header .buttons {
 }
 #our-work .our-work {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 250px);
   align-content: center;
   gap: 1rem;
   padding: 1rem 0;
@@ -498,7 +495,7 @@ header .buttons {
 .our-work .card {
   background: #00000050;
   text-align: center;
-  border: 1px solid var(--bg-light-blue);
+  border: 1px solid var(--light-blue);
   border-top-width: 5px;
   padding: 2rem 0;
   border-radius: 0 0 8px 8px;
@@ -507,29 +504,10 @@ header .buttons {
   font-size: 3em;
 }
 
-#clients {
-  padding: 4rem 0;
-  text-align: center;
-  background-color: var(--bg-light-blue);
-}
-#clients .clients {
-   
-  margin-top: 3rem;
-}
-.clients img {
-  width: 190px;
-  height: 125px;
-  border-radius: 10px;
-  filter: grayscale(1);
-}
-.clients a:hover img {
-  filter: grayscale(0);
-}
-
 #portfolio {
   margin: 3rem 0;
 }
-#portfolio .header { 
+#portfolio .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -556,7 +534,7 @@ header .buttons {
   font-size: 18px;
 }
 #portfolio .tab.active {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #portfolio .tab.active::before {
   content: "";
@@ -564,14 +542,13 @@ header .buttons {
   top: 50%;
   left: -8px;
   transform: translateY(-50%);
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   width: 5px;
   height: 5px;
   border-radius: 50%;
 }
 #portfolio .items {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 1rem;
 }
 #portfolio .items .item {
@@ -586,39 +563,39 @@ header .buttons {
   justify-content: start;
   gap: 1rem;
   position: absolute;
-  bottom: -48px;
   background: #00000050;
 }
 .item-name h5 {
   font-size: 18px;
 }
-.item-name i {
-  transform: translateX(-40px);
-  padding: 1rem 0.75rem;
-}
-.item-name i:hover {
-  background: var(--bg-light-blue);
-  color: white;
-  padding: 1rem 0.75rem;
-}
+
 #portfolio .items .item img {
   width: 100%;
   height: 100%;
 }
-
-#portfolio .items .item:hover img {
-  transform: scale(1.1);
-  transition: all 0.3s linear;
-}
-#portfolio .items .item:hover .item-name {
-  bottom: 0;
-  transition: bottom 0.3s linear;
-}
-#portfolio .items .item:hover .item-name i {
+.item-name i {
   transform: translateX(0px);
-  transition: transform 0.3s 0.3s linear;
+  padding: 1rem 0.75rem;
 }
-#pricingplans{
+#clients {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--light-blue);
+}
+#clients .clients {
+  margin-top: 3rem;
+}
+.clients img {
+  width: 190px;
+  height: 125px;
+  border-radius: 10px;
+  filter: grayscale(1);
+}
+.clients a:hover img {
+  filter: grayscale(0);
+}
+
+#pricingplans {
   margin: 3rem 0;
 }
 #pricingplans .plans .card.best-plan .plan-header::after {
@@ -633,11 +610,11 @@ header .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 1rem;
 }
 #pricingplans .plans .card {
-  border: 1px solid var(--bg-light-blue);
+  border: 1px solid var(--light-blue);
   padding: 1rem;
   width: 315px;
   margin: 2rem 0;
@@ -656,7 +633,7 @@ header .buttons {
   width: 200px;
   height: 2px;
   display: block;
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   position: absolute;
   bottom: 0;
 }
@@ -670,11 +647,11 @@ header .buttons {
 }
 #pricingplans .plans .card .plan-header .plan-price sup {
   font-size: 0.4em;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 
 #pricingplans .plans .card .plan-header .subtext {
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
   font-size: 1.2em;
   font-style: italic;
 }
@@ -695,15 +672,15 @@ header .buttons {
 #pricingplans .plan-details button {
   width: 100%;
   background: transparent;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #pricingplans .plan-details button:hover {
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   color: white;
 }
 
 #pricingplans .best-plan {
-  background: var(--bg-light-blue);
+  background: var(--light-blue);
   color: white;
   overflow: hidden;
   position: relative;
@@ -718,12 +695,12 @@ header .buttons {
 
 #pricingplans .best-plan button:hover {
   background: white !important;
-  color: var(--bg-light-blue) !important;
+  color: var(--light-blue) !important;
 }
-#pricingplans .best-plan::after{
+#pricingplans .best-plan::after {
   content: "Most Important";
   background: white;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   width: 200px;
   font-size: 13px;
   font-weight: 900;
@@ -736,9 +713,8 @@ header .buttons {
 #testimonials {
   position: relative;
   background-image: url("../img/pattern-bg-4");
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
-
 
 #testimonials .container {
   background: #0009;
@@ -772,7 +748,7 @@ header .buttons {
 #testimonials .testimonials .testimonial .testimonial-img {
   width: 80px;
   height: 80px;
-  border: 3px solid var(--bg-light-blue);
+  border: 3px solid var(--light-blue);
   border-radius: 50%;
 }
 #testimonials .testimonials .testimonial .testimonial-img img {
@@ -783,7 +759,7 @@ header .buttons {
   width: 50%;
 }
 #testimonials .testimonials .testimonial .testimonial-author p {
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
   text-align: center;
 }
 #testimonials .slider-controls {
@@ -823,11 +799,13 @@ header .buttons {
 }
 #blog .blog {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-#blog .blog .card:hover img {
+#blog .blog .card img {
   transform: scale(1.1);
+}
+#blog .blog .card:hover img {
+  transform: scale(1.2);
   transition: transform 0.3s linear;
 }
 #blog .blog .card .card-header {
@@ -850,21 +828,21 @@ header .buttons {
 #blog .blog .card .card-body .category-author a {
   padding: 0 10px;
   font-size: 13px;
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
 }
 #blog .blog .card .card-body .category-author a:first-child {
-  border-right: 1px solid var(--bg-light-gray);
+  border-right: 1px solid var(--light-gray);
   padding-left: 0;
 }
 #blog .blog .card .card-body .category-author a:hover,
 #blog .blog .card .card-body .category-author a i {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #blog .card .card-text .card-title a {
   color: white;
 }
 #blog .card .card-text .card-title a:hover {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 #blog .card .card-text .card-title {
   font-size: 1.5em;
@@ -872,20 +850,19 @@ header .buttons {
 #blog .card button {
   background: transparent;
   padding-left: 0;
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   border-color: transparent;
 }
 
 footer {
-  background-image: url("/assets/img/pattern-bg-3.jpg");
+  background-image: url("../img/pattern-bg-3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 footer .footer {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
-  background: #000000a9;
+  background: rgb(6, 8, 35, 0.9);
   gap: 1rem;
   padding-top: 2rem;
 }
@@ -895,10 +872,10 @@ footer .footer form {
 footer .footer form label {
   font-weight: 500;
 }
-footer .footer form div{
+footer .footer form div {
   display: flex;
 }
-footer .footer form input[type="email"] { 
+footer .footer form input[type="email"] {
   flex: 3;
   border: 0;
   color: #fff;
@@ -912,7 +889,7 @@ footer .footer form input[type="email"]::placeholder {
 }
 footer .footer form button {
   flex: 1;
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   color: white;
   height: 50px;
   border: 0;
@@ -922,7 +899,7 @@ footer .footer form button {
   cursor: pointer;
 }
 .footer .warning {
-  color: var(--bg-light-gray);
+  color: var(--light-gray);
 }
 .footer .links,
 .footer .resourse {
@@ -941,7 +918,7 @@ footer .footer form button {
   transition: transform 0.5s linear;
 }
 .footer ul li i {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
 }
 .footer .social-media {
   display: flex;
@@ -953,7 +930,7 @@ footer .footer form button {
 }
 .footer .contact-information div a {
   color: white;
-  background-color: var(--bg-light-blue);
+  background-color: var(--light-blue);
   display: grid;
   place-content: center;
   border-radius: 5px;
@@ -964,7 +941,7 @@ footer .footer form button {
   margin-bottom: 1rem;
 }
 .footer .contact-information .social-media a:hover {
-  color: var(--bg-light-blue);
+  color: var(--light-blue);
   background-color: white;
 }
 .copyright {
@@ -986,8 +963,92 @@ header .logo {
   gap: 1rem;
   flex: 3;
 }
-/* desktop */
 
+/*! desktop */
+@media (min-width: 993px) {
+  .container {
+    padding: 0 10%;
+  }
+  header nav ul li a:hover {
+    color: var(--dark-blue);
+  }
+  .dropdown-container {
+    position: relative;
+  }
+  .dropdown-container:hover .dropdown {
+    display: block;
+  }
+  .dropdown {
+    /* display: block; */
+    padding: 0.5rem;
+    /* border:1px solid black; */
+    position: absolute;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+    background: var(--light-blue);
+    color: white;
+    text-align: center;
+  }
+  .dropdown li {
+    width: 150px;
+    height: 100%;
+    padding: 1rem 0.5rem;
+  }
+  #it-solutions .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  #services .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #about-us .card {
+    width: 48%;
+  }
+
+  #about-us .card:hover .icon {
+    transform: translateY(-10px);
+    background: var(--light-blue);
+    color: white;
+    transition: all 0.3s linear;
+  }
+  #our-work .our-work {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 250px);
+  }
+
+  #portfolio .items {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+  #portfolio .items .item .item-name {
+    bottom: -48px;
+  }
+  .item-name i {
+    transform: translateX(-40px);
+  }
+  #portfolio .items .item:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s linear;
+  }
+  #portfolio .items .item:hover .item-name {
+    bottom: 0;
+    transition: bottom 0.3s linear;
+  }
+  #portfolio .items .item:hover .item-name i {
+    transform: translateX(0px);
+    transition: transform 0.3s 0.3s linear;
+  }
+  .item-name i:hover {
+    background: var(--light-blue);
+    color: white;
+    padding: 1rem 0.75rem;
+  }
+  #blog .blog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer .footer {
+    grid-template-columns: 2fr repeat(3, 1fr);
+  }
+}
 /* tablet */
 @media (min-width: 768px) and (max-width: 992px) {
   .container {
@@ -995,11 +1056,18 @@ header .logo {
   }
   .header {
     flex-wrap: wrap;
-    align-items: start !important; 
+    align-items: start !important;
     margin-bottom: 2rem;
   }
   header {
     position: relative;
+  }
+
+  .dropdown-container:hover .dropdown {
+    display: block;
+  }
+  .dropdown li {
+    padding: 0.75rem;
   }
   .mobile-menubtn-label {
     display: block;
@@ -1014,8 +1082,8 @@ header .logo {
     justify-content: flex-end;
   }
   header nav {
-    border-top: 3px solid var(--bg-dark-blue);
-    background: var(--bg-light-blue);
+    border-top: 3px solid var(--dark-blue);
+    background: var(--light-blue);
     width: 100%;
     display: none;
     position: absolute;
@@ -1023,12 +1091,7 @@ header .logo {
     left: 0;
     padding: 2rem;
   }
-  .dropdown {
-    display: none;
-  }
-  .dropdown li {
-    padding: 0.75rem;
-  }
+
   header nav ul {
     flex-direction: column;
   }
@@ -1050,7 +1113,9 @@ header .logo {
   #clients .clients {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  #portfolio .items .item .item-name {
+    bottom: 0px;
+  }
   #services .services,
   #our-work .our-work,
   #pricingplans .plans,
@@ -1088,8 +1153,8 @@ header .logo {
     justify-content: flex-end;
   }
   header nav {
-    border-top: 3px solid var(--bg-dark-blue);
-    background: var(--bg-light-blue);
+    border-top: 3px solid var(--dark-blue);
+    background: var(--light-blue);
     width: 100%;
     display: none;
     position: absolute;
@@ -1097,8 +1162,8 @@ header .logo {
     left: 0;
     padding: 2rem;
   }
-  .dropdown {
-    display: none;
+  .dropdown-container:hover .dropdown {
+    display: block;
   }
   .dropdown li {
     padding: 0.75rem;
@@ -1122,8 +1187,14 @@ header .logo {
   }
   .header {
     flex-wrap: wrap;
-    align-items: start !important; 
+    align-items: start !important;
     margin-bottom: 2rem;
+  }
+  #about-us .card {
+    width: 100%;
+  }
+  #portfolio .items .item .item-name {
+    bottom: 0px;
   }
   #it-solutions .container,
   #portfolio .items,

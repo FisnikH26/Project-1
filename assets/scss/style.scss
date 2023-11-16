@@ -92,6 +92,7 @@ a {
     color: $light-gray;
     font-weight: 500;
     width: 90%;
+    margin-top: 1rem;
   }
 }
 
@@ -108,12 +109,11 @@ a {
   svg path {
     stroke: $light-blue;
     fill: $light-blue;
-
     width: 100%;
   }
   .sign-line {
     position: absolute;
-    top: -27px;
+    top: -19%;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -426,13 +426,14 @@ main {
         gap: 1rem;
 
         .card {
-          display: flex;
+          display: grid;
+          grid-template-columns: 50px 1fr;
           gap: 1rem;
           .icon {
             color: $light-blue;
             background-color: $light-blue-50;
             border-radius: 5px;
-            width: 120px;
+            width: 50px;
             height: 50px;
             display: grid;
             place-content: center;
@@ -516,9 +517,6 @@ main {
       height: 100%;
       background-color: rgba(6, 8, 35, 0.6);
     }
-  }
-
-  #our-work {
     .our-work {
       display: grid;
       align-content: center;
@@ -1135,17 +1133,24 @@ footer {
     gap: 1rem;
     justify-content: flex-end;
   }
-
-  #it-solutions .container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  .illustration-container {
+    text-align: center;
+    img {
+      width: 50%;
+    }
   }
+   
   #about-us {
     .container {
       flex-wrap: wrap;
     }
     .about-us .cards {
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
+
+      .card {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+      }
     }
   }
   #why-choose-us .container {
@@ -1174,7 +1179,13 @@ footer {
 /* mobile */
 @media (max-width: 767px) {
   .container {
-    padding: 0;
+    padding: 0 2%;
+  }
+  .illustration-container {
+    text-align: center;
+    img {
+      width: 50%;
+    }
   }
   header {
     position: relative;
@@ -1233,11 +1244,14 @@ footer {
   #portfolio .items .item .item-name {
     bottom: 0px;
   }
+  #why-choose-us .container {
+    flex-wrap: wrap-reverse;
+  }
   #portfolio .tabs {
     flex-wrap: wrap;
   }
   #portfolio {
-    .tabs{
+    .tabs {
       justify-content: center;
     }
     .items {

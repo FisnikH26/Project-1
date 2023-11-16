@@ -479,9 +479,6 @@ main {
       align-items: center;
       margin: 5rem 0;
     }
-    p {
-      margin-bottom: 2rem;
-    }
     img {
       margin-bottom: -0.7rem;
     }
@@ -496,6 +493,10 @@ main {
           font-size: 3em;
           font-family: "Jost", sans-serif;
         }
+
+        &:last-child p {
+          padding-bottom: 2rem;
+        }
       }
       h4 {
         font-size: 1.5em;
@@ -503,6 +504,7 @@ main {
       }
       p {
         padding-left: 5rem;
+        
       }
     }
     .btn {
@@ -1139,13 +1141,13 @@ footer {
       width: 50%;
     }
   }
-   
+
   #about-us {
     .container {
       flex-wrap: wrap;
     }
     .about-us .cards {
-      grid-template-columns:1fr;
+      grid-template-columns: 1fr;
 
       .card {
         display: grid;

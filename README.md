@@ -1,3 +1,3 @@
 # Project-1
 
-## Ky eshte projekti im i pare ne bootcamp 10 i PerProgamer
+## Ky eshte projekti im i pare ne Bootcamp 10 i A[Per Progamera](https://perprogramera.com/)

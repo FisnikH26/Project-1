@@ -95,6 +95,7 @@ a {
   color: rgb(186, 190, 200);
   font-weight: 500;
   width: 90%;
+  margin-top: 1rem;
 }
 
 .highlight {
@@ -115,7 +116,7 @@ a {
 }
 .highlight .sign-line {
   position: absolute;
-  top: -27px;
+  top: -19%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -398,14 +399,15 @@ main #about-us .about-us .cards {
   gap: 1rem;
 }
 main #about-us .about-us .cards .card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50px 1fr;
   gap: 1rem;
 }
 main #about-us .about-us .cards .card .icon {
   color: #08aef5;
   background-color: rgba(8, 175, 245, 0.5);
   border-radius: 5px;
-  width: 120px;
+  width: 50px;
   height: 50px;
   display: grid;
   place-content: center;
@@ -1059,15 +1061,21 @@ footer .copyright {
     gap: 1rem;
     justify-content: flex-end;
   }
-  #it-solutions .container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  .illustration-container {
+    text-align: center;
+  }
+  .illustration-container img {
+    width: 50%;
   }
   #about-us .container {
     flex-wrap: wrap;
   }
   #about-us .about-us .cards {
     grid-template-columns: 1fr;
+  }
+  #about-us .about-us .cards .card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
   }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;
@@ -1095,7 +1103,13 @@ footer .copyright {
 /* mobile */
 @media (max-width: 767px) {
   .container {
-    padding: 0;
+    padding: 0 2%;
+  }
+  .illustration-container {
+    text-align: center;
+  }
+  .illustration-container img {
+    width: 50%;
   }
   header {
     position: relative;
@@ -1151,6 +1165,9 @@ footer .copyright {
   }
   #portfolio .items .item .item-name {
     bottom: 0px;
+  }
+  #why-choose-us .container {
+    flex-wrap: wrap-reverse;
   }
   #portfolio .tabs {
     flex-wrap: wrap;

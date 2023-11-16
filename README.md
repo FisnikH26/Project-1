@@ -1,3 +1,3 @@
-# Project-1
+# Projekt me Html Css(scss) 
 
-## Ky eshte projekti im i pare ne `Bootcamp 10` i [Per Progamera](https://perprogramera.com/)
+## Ky eshte projekti im i pare ne _Bootcamp 10_ i **[Per Progamera](https://perprogramera.com/)**

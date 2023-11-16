@@ -447,9 +447,6 @@ main #why-choose-us .container {
   align-items: center;
   margin: 5rem 0;
 }
-main #why-choose-us p {
-  margin-bottom: 2rem;
-}
 main #why-choose-us img {
   margin-bottom: -0.7rem;
 }
@@ -465,6 +462,9 @@ main #why-choose-us ol li::marker {
   content: "0" counter(li) ".";
   font-size: 3em;
   font-family: "Jost", sans-serif;
+}
+main #why-choose-us ol li:last-child p {
+  padding-bottom: 2rem;
 }
 main #why-choose-us ol h4 {
   font-size: 1.5em;

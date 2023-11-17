@@ -88,10 +88,12 @@ a {
     font-size: 3em;
     font-weight: 500;
   }
+  & > div:first-child {
+    width: 60%;
+  }
   .subtitle {
     color: $light-gray;
     font-weight: 500;
-    width: 90%;
     margin-top: 1rem;
   }
 }
@@ -430,8 +432,6 @@ main {
           grid-template-columns: 50px 1fr;
           gap: 1rem;
           .icon {
-            color: $light-blue;
-            background-color: $light-blue-50;
             border-radius: 5px;
             width: 50px;
             height: 50px;
@@ -503,7 +503,6 @@ main {
       }
       p {
         padding-left: 5rem;
-        
       }
     }
     .btn {
@@ -638,7 +637,6 @@ main {
     .plans {
       display: flex;
       align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
       .card {
@@ -758,6 +756,9 @@ main {
     }
     .header {
       text-align: center;
+      & > div:first-child {
+        width: 100%;
+      }
     }
     .slider-controls {
       display: flex;
@@ -893,11 +894,13 @@ footer {
   background-image: url("../img/pattern-bg-3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-
+  .container {
+    background: rgb(6, 8, 35, 0.9);
+  }
   .footer {
     display: grid;
-    background: rgb(6, 8, 35, 0.9);
     gap: 1rem;
+    justify-items: center;
     padding-top: 2rem;
 
     form {
@@ -918,17 +921,17 @@ footer {
           &::placeholder {
             color: #fff;
           }
-          button {
-            flex: 1;
-            background-color: $light-blue;
-            color: white;
-            height: 50px;
-            border: 0;
-            padding: 0 1rem;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-          }
+        }
+        button {
+          flex: 1;
+          background-color: $light-blue;
+          color: white;
+          height: 50px;
+          border: 0;
+          padding: 0 1rem;
+          font-size: 15px;
+          font-weight: 600;
+          cursor: pointer;
         }
       }
       .warning {
@@ -952,7 +955,7 @@ footer {
         }
         &:hover a {
           transform: translateX(5px);
-          transition: transform 0.5s linear;
+          transition: transform 0.1s linear;
         }
       }
     }
@@ -985,6 +988,7 @@ footer {
   .copyright {
     margin-top: 3rem;
     font-weight: 500;
+    text-align: center;
   }
 }
 
@@ -1037,6 +1041,10 @@ footer {
   #about-us {
     .card {
       width: 48%;
+      .icon {
+        color: $light-blue;
+        background-color: $light-blue-50;
+      }
       &:hover .icon {
         transform: translateY(-10px);
         background: $light-blue;
@@ -1079,6 +1087,11 @@ footer {
           }
         }
       }
+    }
+  }
+  #pricingplans {
+    .plans {
+      justify-content: space-between;
     }
   }
 
@@ -1242,21 +1255,26 @@ footer {
   #about-us .card {
     width: 100%;
   }
-  #portfolio .items .item .item-name {
-    bottom: 0px;
-  }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;
   }
-  #portfolio .tabs {
-    flex-wrap: wrap;
+  #pricingplans {
+    .plans {
+      justify-content: center;
+    }
   }
   #portfolio {
     .tabs {
       justify-content: center;
+      flex-wrap: wrap;
     }
     .items {
       padding: 0 10%;
+      .item {
+        .item-name {
+          bottom: 0px;
+        }
+      }
     }
   }
   #it-solutions .container,

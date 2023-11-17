@@ -88,9 +88,9 @@ a {
     font-size: 3em;
     font-weight: 500;
   }
-  & > div:first-child {
-    width: 60%;
-  }
+  // & > div:first-child {
+  //   width: 60%;
+  // }
   .subtitle {
     color: $light-gray;
     font-weight: 500;
@@ -1088,12 +1088,14 @@ footer {
       }
     }
   }
+  .header .subtitle{
+    width: 60%;
+  }
   #pricingplans {
     .plans {
       justify-content: space-between;
     }
-  }
-
+  } 
   #blog .blog {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1146,11 +1148,12 @@ footer {
     gap: 1rem;
     justify-content: flex-end;
   }
-  .illustration-container {
+  .illustration-container { 
     text-align: center;
     img {
       width: 50%;
     }
+    
   }
 
   #about-us {
@@ -1258,6 +1261,7 @@ footer {
     flex-wrap: wrap-reverse;
   }
   #pricingplans {
+    
     .plans {
       justify-content: center;
     }

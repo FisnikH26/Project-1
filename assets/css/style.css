@@ -91,9 +91,6 @@ a {
   font-size: 3em;
   font-weight: 500;
 }
-.header > div:first-child {
-  width: 60%;
-}
 .header .subtitle {
   color: rgb(186, 190, 200);
   font-weight: 500;
@@ -1018,6 +1015,9 @@ footer .copyright {
     background: #08aef5;
     color: white;
     padding: 1rem 0.75rem;
+  }
+  .header .subtitle {
+    width: 60%;
   }
   #pricingplans .plans {
     justify-content: space-between;

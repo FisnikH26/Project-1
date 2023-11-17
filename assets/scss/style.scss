@@ -900,7 +900,6 @@ footer {
   .footer {
     display: grid;
     gap: 1rem;
-    justify-items: center;
     padding-top: 2rem;
 
     form {
@@ -1098,7 +1097,7 @@ footer {
   #blog .blog {
     grid-template-columns: repeat(3, 1fr);
   }
-  footer .footer {
+  footer .footer { 
     grid-template-columns: 2fr repeat(3, 1fr);
   }
 }
@@ -1186,7 +1185,7 @@ footer {
   #it-solutions .container {
     grid-template-columns: 1fr;
   }
-  footer .footer {
+  footer .footer { 
     grid-template-columns: 2fr 1fr;
   }
 }

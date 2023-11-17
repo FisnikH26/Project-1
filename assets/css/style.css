@@ -91,10 +91,12 @@ a {
   font-size: 3em;
   font-weight: 500;
 }
+.header > div:first-child {
+  width: 60%;
+}
 .header .subtitle {
   color: rgb(186, 190, 200);
   font-weight: 500;
-  width: 90%;
   margin-top: 1rem;
 }
 
@@ -404,8 +406,6 @@ main #about-us .about-us .cards .card {
   gap: 1rem;
 }
 main #about-us .about-us .cards .card .icon {
-  color: #08aef5;
-  background-color: rgba(8, 175, 245, 0.5);
   border-radius: 5px;
   width: 50px;
   height: 50px;
@@ -595,7 +595,6 @@ main #pricingplans {
 main #pricingplans .plans {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -711,6 +710,9 @@ main #testimonials .container {
 }
 main #testimonials .header {
   text-align: center;
+}
+main #testimonials .header > div:first-child {
+  width: 100%;
 }
 main #testimonials .slider-controls {
   display: flex;
@@ -835,10 +837,13 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
 }
+footer .container {
+  background: rgba(6, 8, 35, 0.9);
+}
 footer .footer {
   display: grid;
-  background: rgba(6, 8, 35, 0.9);
   gap: 1rem;
+  justify-items: center;
   padding-top: 2rem;
 }
 footer .footer form {
@@ -865,7 +870,7 @@ footer .footer form div input[type=email]::-moz-placeholder {
 footer .footer form div input[type=email]::placeholder {
   color: #fff;
 }
-footer .footer form div input[type=email] button {
+footer .footer form div button {
   flex: 1;
   background-color: #08aef5;
   color: white;
@@ -896,7 +901,7 @@ footer .footer ul li a {
 }
 footer .footer ul li:hover a {
   transform: translateX(5px);
-  transition: transform 0.5s linear;
+  transition: transform 0.1s linear;
 }
 footer .footer ul li,
 footer .footer .social-media {
@@ -926,6 +931,7 @@ footer .footer .contact-information .social-media a:hover {
 footer .copyright {
   margin-top: 3rem;
   font-weight: 500;
+  text-align: center;
 }
 
 /*! desktop */
@@ -974,6 +980,10 @@ footer .copyright {
   #about-us .card {
     width: 48%;
   }
+  #about-us .card .icon {
+    color: #08aef5;
+    background-color: rgba(8, 175, 245, 0.5);
+  }
   #about-us .card:hover .icon {
     transform: translateY(-10px);
     background: #08aef5;
@@ -1009,6 +1019,9 @@ footer .copyright {
     background: #08aef5;
     color: white;
     padding: 1rem 0.75rem;
+  }
+  #pricingplans .plans {
+    justify-content: space-between;
   }
   #blog .blog {
     grid-template-columns: repeat(3, 1fr);
@@ -1163,20 +1176,21 @@ footer .copyright {
   #about-us .card {
     width: 100%;
   }
-  #portfolio .items .item .item-name {
-    bottom: 0px;
-  }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;
   }
-  #portfolio .tabs {
-    flex-wrap: wrap;
+  #pricingplans .plans {
+    justify-content: center;
   }
   #portfolio .tabs {
     justify-content: center;
+    flex-wrap: wrap;
   }
   #portfolio .items {
     padding: 0 10%;
+  }
+  #portfolio .items .item .item-name {
+    bottom: 0px;
   }
   #it-solutions .container,
   #portfolio .items,

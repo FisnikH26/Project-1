@@ -843,7 +843,6 @@ footer .container {
 footer .footer {
   display: grid;
   gap: 1rem;
-  justify-items: center;
   padding-top: 2rem;
 }
 footer .footer form {

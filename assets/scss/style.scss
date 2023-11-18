@@ -87,10 +87,7 @@ a {
   .title {
     font-size: 3em;
     font-weight: 500;
-  }
-  // & > div:first-child {
-  //   width: 60%;
-  // }
+  } 
   .subtitle {
     color: $light-gray;
     font-weight: 500;
@@ -134,6 +131,27 @@ a {
   }
 }
 
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: $light-blue;
+  padding-left: 0px;
+  &:hover {
+    color: white;
+    & i {
+      transform: translateX(5px);
+      transition: transform 0.3s linear !important;
+    }
+  }
+  i {
+    padding-top: 3px;
+  }
+}
+
 .go-up a {
   position: fixed;
   bottom: 20px;
@@ -152,6 +170,7 @@ a {
 }
 
 header {
+  position: fixed;
   width: 100%;
   background: $light-blue;
   padding: 0.75rem 0;
@@ -177,17 +196,19 @@ header {
         font-weight: 500;
 
         &.active {
-          color: $dark-blue;
+          position: relative;
           &::before {
             content: "";
             width: 5px;
             height: 5px;
-            display: inline-block;
-            background: $dark-blue;
+            background: white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -10px;
             border-radius: 50%;
             margin: 0 2px 2px 0;
           }
-
           i {
             font-size: 13px;
           }
@@ -209,8 +230,10 @@ header {
       background: transparent;
       color: #fff;
       border: none;
+      cursor: pointer;
     }
     .btn-theme {
+      cursor: pointer;
       padding: 5px 7px;
       font-size: 1em;
       color: $light-blue;
@@ -223,10 +246,14 @@ header {
 
 #it-solutions {
   background-image: url(../img/pattern-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   .container {
     background: rgb(6, 8, 35, 0.6);
     display: grid;
     align-items: center;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 
     .play-btn {
       width: 50px;
@@ -237,8 +264,19 @@ header {
       display: grid;
       place-content: center;
       position: relative;
-      z-index: 1;
-
+      z-index: 0;
+      cursor: pointer;
+      &:hover {
+        background-color: white;
+        i {
+          color: $light-blue;
+        }
+        &::before,
+        &::after {
+          background-color: white;
+          
+        }
+      }
       &::before {
         animation-delay: 0.6s !important;
         background: $light-blue-50;
@@ -255,8 +293,7 @@ header {
         position: absolute;
         top: 0;
         animation: pulse 2s infinite linear;
-        animation-delay: 0s;
-        z-index: -1;
+        z-index: -10;
       }
     }
   }
@@ -295,18 +332,6 @@ header {
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  70% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
 main {
   #services {
     margin: 5rem 0;
@@ -386,25 +411,7 @@ main {
           font-weight: 600;
           font-size: 1.5em;
         }
-        .btn {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          background-color: transparent;
-          border: none;
-          color: $light-blue;
-          padding-left: 0px;
-          &:hover {
-            color: white;
-            & i {
-              transform: translateX(5px);
-              transition: transform 0.3s linear !important;
-            }
-          }
-          i {
-            padding-top: 3px;
-          }
-        }
+        
       }
     }
   }
@@ -435,6 +442,8 @@ main {
             border-radius: 5px;
             width: 50px;
             height: 50px;
+            // color: $light-blue;
+            // background-color: $light-blue-50;
             display: grid;
             place-content: center;
             font-size: 1.25em;
@@ -642,7 +651,7 @@ main {
       .card {
         border: 1px solid $light-blue;
         padding: 1rem;
-        width: 315px;
+        width: 280px;
         margin: 2rem 0;
         border-radius: 10px 10px 0 0;
         &.best-plan {
@@ -650,6 +659,9 @@ main {
           color: white;
           overflow: hidden;
           position: relative;
+          &.best-plan .plan-header {
+            border-bottom: 2px solid white;
+          }
           sup {
             color: white !important;
           }
@@ -666,14 +678,14 @@ main {
             content: "Most Popular";
             background: white;
             color: $light-blue;
-            width: 200px;
+            width: 100%;
             font-size: 13px;
             font-weight: 900;
             text-align: center;
             transform: rotateZ(42deg);
             position: absolute;
-            top: 43px;
-            right: -40px;
+            top: 45px;
+            right: -90px;
           }
           & .plan-header::after {
             background-color: white !important;
@@ -686,6 +698,7 @@ main {
           flex-direction: column;
           gap: 1rem;
           padding: 1rem 0;
+          border-bottom: 2px solid $light-blue;
 
           .plan-name {
             font-size: 1.5em;
@@ -703,16 +716,6 @@ main {
             color: $light-gray;
             font-size: 1.2em;
             font-style: italic;
-          }
-
-          &::after {
-            content: "";
-            width: 200px;
-            height: 2px;
-            display: block;
-            background-color: $light-blue;
-            position: absolute;
-            bottom: 0;
           }
         }
         .plan-details {
@@ -768,10 +771,6 @@ main {
       height: 100%;
       position: absolute;
       top: 0;
-      &:has(button:focus) ~ .testimonial-container .testimonials .testimonial {
-        transform: translate(-100%);
-        transition: transform 1s ease-in;
-      }
       button {
         width: 50px;
         height: 50px;
@@ -780,6 +779,11 @@ main {
         cursor: pointer;
         background: #fff5;
         color: #fff;
+
+        &:hover{
+          background: #fff9;
+
+        }
       }
     }
     .testimonial-container {
@@ -848,7 +852,7 @@ main {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: #0007;
+            background: #000000cf;
             color: #fff;
             padding: 3px 15px;
             border-radius: 50px;
@@ -872,10 +876,13 @@ main {
               }
             }
           }
-          .card-title {
-            .card-text {
-              font-size: 1.5em;
-              font-weight: 500;
+          .card-text {
+              .card-title {
+              font-size: 1.3em;
+              font-weight: 600;
+            }
+            p{
+              color: $light-gray; 
             }
             a {
               color: white;
@@ -991,13 +998,39 @@ footer {
   }
 }
 
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 /*! desktop */
 @media (min-width: 993px) {
   .container {
     padding: 0 10%;
   }
   header nav ul li a:hover {
-    color: $dark-blue;
+    position: relative;
+    &::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: white;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -10px;
+      border-radius: 50%;
+      margin: 0 2px 2px 0;
+    }
   }
   .dropdown-container {
     position: relative;
@@ -1014,10 +1047,6 @@ footer {
         width: 150px;
         height: 100%;
         padding: 1rem 0.5rem;
-        a {
-          width: 100%;
-          display: block;
-        }
       }
     }
     &:hover .dropdown {
@@ -1088,18 +1117,24 @@ footer {
       }
     }
   }
-  .header .subtitle{
+  .header .subtitle {
     width: 60%;
   }
   #pricingplans {
+    .header > div:first-child {
+      width: 70%;
+    }
+    .subtitle {
+      width: 90%;
+    }
     .plans {
       justify-content: space-between;
     }
-  } 
+  }
   #blog .blog {
     grid-template-columns: repeat(3, 1fr);
   }
-  footer .footer { 
+  footer .footer {
     grid-template-columns: 2fr repeat(3, 1fr);
   }
 }
@@ -1148,12 +1183,8 @@ footer {
     gap: 1rem;
     justify-content: flex-end;
   }
-  .illustration-container { 
-    text-align: center;
-    img {
-      width: 50%;
-    }
-    
+  .illustration-container {
+    text-align: center; 
   }
 
   #about-us {
@@ -1166,7 +1197,16 @@ footer {
       .card {
         display: grid;
         grid-template-columns: 50px 1fr;
+        .icon {
+          color: $light-blue;
+          background-color: $light-blue-50;
+        }
       }
+    }
+  }
+  #pricingplans {
+    .plans {
+      justify-content: space-between;
     }
   }
   #why-choose-us .container {
@@ -1188,7 +1228,7 @@ footer {
   #it-solutions .container {
     grid-template-columns: 1fr;
   }
-  footer .footer { 
+  footer .footer {
     grid-template-columns: 2fr 1fr;
   }
 }
@@ -1199,9 +1239,6 @@ footer {
   }
   .illustration-container {
     text-align: center;
-    img {
-      width: 50%;
-    }
   }
   header {
     position: relative;
@@ -1256,12 +1293,15 @@ footer {
   }
   #about-us .card {
     width: 100%;
+    .icon {
+      color: $light-blue;
+      background-color: $light-blue-50;
+    }
   }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;
   }
   #pricingplans {
-    
     .plans {
       justify-content: center;
     }

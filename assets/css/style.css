@@ -133,6 +133,26 @@ a {
   width: 90%;
 }
 
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: #08aef5;
+  padding-left: 0px;
+}
+.read-more:hover {
+  color: white;
+}
+.read-more:hover i {
+  transform: translateX(5px);
+  transition: transform 0.3s linear !important;
+}
+.read-more i {
+  padding-top: 3px;
+}
+
 .go-up a {
   position: fixed;
   bottom: 20px;
@@ -150,6 +170,7 @@ a {
 }
 
 header {
+  position: fixed;
   width: 100%;
   background: #08aef5;
   padding: 0.75rem 0;
@@ -174,14 +195,17 @@ header nav ul li a {
   font-weight: 500;
 }
 header nav ul li a.active {
-  color: rgb(6, 8, 35);
+  position: relative;
 }
 header nav ul li a.active::before {
   content: "";
   width: 5px;
   height: 5px;
-  display: inline-block;
-  background: rgb(6, 8, 35);
+  background: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -10px;
   border-radius: 50%;
   margin: 0 2px 2px 0;
 }
@@ -202,8 +226,10 @@ header .buttons .btn-search {
   background: transparent;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 header .buttons .btn-theme {
+  cursor: pointer;
   padding: 5px 7px;
   font-size: 1em;
   color: #08aef5;
@@ -214,11 +240,15 @@ header .buttons .btn-theme {
 
 #it-solutions {
   background-image: url(../img/pattern-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #it-solutions .container {
   background: rgba(6, 8, 35, 0.6);
   display: grid;
   align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 #it-solutions .container .play-btn {
   width: 50px;
@@ -229,7 +259,17 @@ header .buttons .btn-theme {
   display: grid;
   place-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  cursor: pointer;
+}
+#it-solutions .container .play-btn:hover {
+  background-color: white;
+}
+#it-solutions .container .play-btn:hover i {
+  color: #08aef5;
+}
+#it-solutions .container .play-btn:hover::before, #it-solutions .container .play-btn:hover::after {
+  background-color: white;
 }
 #it-solutions .container .play-btn::before {
   animation-delay: 0.6s !important;
@@ -246,8 +286,7 @@ header .buttons .btn-theme {
   position: absolute;
   top: 0;
   animation: pulse 2s infinite linear;
-  animation-delay: 0s;
-  z-index: -1;
+  z-index: -10;
 }
 #it-solutions .title {
   font-weight: 900;
@@ -280,18 +319,6 @@ header .buttons .btn-theme {
   gap: 1rem;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  70% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
 main #services {
   margin: 5rem 0;
 }
@@ -360,25 +387,6 @@ main #services .card .card-body .card-img svg {
 main #services .card .card-body h3 {
   font-weight: 600;
   font-size: 1.5em;
-}
-main #services .card .card-body .btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: transparent;
-  border: none;
-  color: #08aef5;
-  padding-left: 0px;
-}
-main #services .card .card-body .btn:hover {
-  color: white;
-}
-main #services .card .card-body .btn:hover i {
-  transform: translateX(5px);
-  transition: transform 0.3s linear !important;
-}
-main #services .card .card-body .btn i {
-  padding-top: 3px;
 }
 main #about-us .container {
   display: flex;
@@ -598,7 +606,7 @@ main #pricingplans .plans {
 main #pricingplans .plans .card {
   border: 1px solid #08aef5;
   padding: 1rem;
-  width: 315px;
+  width: 280px;
   margin: 2rem 0;
   border-radius: 10px 10px 0 0;
 }
@@ -607,6 +615,9 @@ main #pricingplans .plans .card.best-plan {
   color: white;
   overflow: hidden;
   position: relative;
+}
+main #pricingplans .plans .card.best-plan.best-plan .plan-header {
+  border-bottom: 2px solid white;
 }
 main #pricingplans .plans .card.best-plan sup {
   color: white !important;
@@ -623,14 +634,14 @@ main #pricingplans .plans .card.best-plan::after {
   content: "Most Popular";
   background: white;
   color: #08aef5;
-  width: 200px;
+  width: 100%;
   font-size: 13px;
   font-weight: 900;
   text-align: center;
   transform: rotateZ(42deg);
   position: absolute;
-  top: 43px;
-  right: -40px;
+  top: 45px;
+  right: -90px;
 }
 main #pricingplans .plans .card.best-plan .plan-header::after {
   background-color: white !important;
@@ -642,6 +653,7 @@ main #pricingplans .plans .card .plan-header {
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 0;
+  border-bottom: 2px solid #08aef5;
 }
 main #pricingplans .plans .card .plan-header .plan-name {
   font-size: 1.5em;
@@ -659,15 +671,6 @@ main #pricingplans .plans .card .plan-header .subtext {
   color: rgb(186, 190, 200);
   font-size: 1.2em;
   font-style: italic;
-}
-main #pricingplans .plans .card .plan-header::after {
-  content: "";
-  width: 200px;
-  height: 2px;
-  display: block;
-  background-color: #08aef5;
-  position: absolute;
-  bottom: 0;
 }
 main #pricingplans .plans .card .plan-details {
   display: flex;
@@ -720,10 +723,6 @@ main #testimonials .slider-controls {
   position: absolute;
   top: 0;
 }
-main #testimonials .slider-controls:has(button:focus) ~ .testimonial-container .testimonials .testimonial {
-  transform: translate(-100%);
-  transition: transform 1s ease-in;
-}
 main #testimonials .slider-controls button {
   width: 50px;
   height: 50px;
@@ -732,6 +731,9 @@ main #testimonials .slider-controls button {
   cursor: pointer;
   background: rgba(255, 255, 255, 0.3333333333);
   color: #fff;
+}
+main #testimonials .slider-controls button:hover {
+  background: rgba(255, 255, 255, 0.6);
 }
 main #testimonials .testimonial-container {
   width: 100%;
@@ -796,7 +798,7 @@ main #blog .blog .card .card-header span {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(0, 0, 0, 0.4666666667);
+  background: rgba(0, 0, 0, 0.8117647059);
   color: #fff;
   padding: 3px 15px;
   border-radius: 50px;
@@ -818,14 +820,17 @@ main #blog .blog .card .card-body .category-author a:hover,
 main #blog .blog .card .card-body .category-author a i {
   color: #08aef5;
 }
-main #blog .blog .card .card-body .card-title .card-text {
-  font-size: 1.5em;
-  font-weight: 500;
+main #blog .blog .card .card-body .card-text .card-title {
+  font-size: 1.3em;
+  font-weight: 600;
 }
-main #blog .blog .card .card-body .card-title a {
+main #blog .blog .card .card-body .card-text p {
+  color: rgb(186, 190, 200);
+}
+main #blog .blog .card .card-body .card-text a {
   color: white;
 }
-main #blog .blog .card .card-body .card-title a:hover {
+main #blog .blog .card .card-body .card-text a:hover {
   color: #08aef5;
 }
 
@@ -930,13 +935,37 @@ footer .copyright {
   text-align: center;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
 /*! desktop */
 @media (min-width: 993px) {
   .container {
     padding: 0 10%;
   }
   header nav ul li a:hover {
-    color: rgb(6, 8, 35);
+    position: relative;
+  }
+  header nav ul li a:hover::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+    border-radius: 50%;
+    margin: 0 2px 2px 0;
   }
   .dropdown-container {
     position: relative;
@@ -955,10 +984,6 @@ footer .copyright {
     width: 150px;
     height: 100%;
     padding: 1rem 0.5rem;
-  }
-  .dropdown-container .dropdown li a {
-    width: 100%;
-    display: block;
   }
   .dropdown-container:hover .dropdown {
     display: block;
@@ -1019,6 +1044,12 @@ footer .copyright {
   .header .subtitle {
     width: 60%;
   }
+  #pricingplans .header > div:first-child {
+    width: 70%;
+  }
+  #pricingplans .subtitle {
+    width: 90%;
+  }
   #pricingplans .plans {
     justify-content: space-between;
   }
@@ -1076,9 +1107,6 @@ footer .copyright {
   .illustration-container {
     text-align: center;
   }
-  .illustration-container img {
-    width: 50%;
-  }
   #about-us .container {
     flex-wrap: wrap;
   }
@@ -1088,6 +1116,13 @@ footer .copyright {
   #about-us .about-us .cards .card {
     display: grid;
     grid-template-columns: 50px 1fr;
+  }
+  #about-us .about-us .cards .card .icon {
+    color: #08aef5;
+    background-color: rgba(8, 175, 245, 0.5);
+  }
+  #pricingplans .plans {
+    justify-content: space-between;
   }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;
@@ -1119,9 +1154,6 @@ footer .copyright {
   }
   .illustration-container {
     text-align: center;
-  }
-  .illustration-container img {
-    width: 50%;
   }
   header {
     position: relative;
@@ -1174,6 +1206,10 @@ footer .copyright {
   }
   #about-us .card {
     width: 100%;
+  }
+  #about-us .card .icon {
+    color: #08aef5;
+    background-color: rgba(8, 175, 245, 0.5);
   }
   #why-choose-us .container {
     flex-wrap: wrap-reverse;

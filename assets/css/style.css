@@ -11,8 +11,22 @@
 }
 
 body {
-  background-color: rgb(6, 8, 35);
-  color: white;
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+body:not(#theme-light:checked) {
+  --dark-blue: rgb(6, 8, 35);
+  --white: white;
+  --dark-blue-05: rgba(6, 8, 35, 0.6);
+  --blog-bg: rgb(7, 34, 64);
+}
+
+body:has(#theme-light:checked) {
+  --dark-blue: white;
+  --white: rgb(6, 8, 35);
+  --dark-blue-05:rgba(255, 255, 255, 0.7);
+  --blog-bg:rgb(219,242,253);
 }
 
 .mobile-menubtn {
@@ -143,7 +157,7 @@ a {
   padding-left: 0px;
 }
 .read-more:hover {
-  color: white;
+  color: var(--white);
 }
 .read-more:hover i {
   transform: translateX(5px);
@@ -160,7 +174,7 @@ a {
   padding: 1rem;
   border-radius: 5px;
   background: #08aef5;
-  color: white;
+  color: var(--white);
   z-index: 999;
   opacity: 0.5;
   box-shadow: 0px 0px 15px 5px rgba(6, 8, 35, 0.3);
@@ -201,7 +215,7 @@ header nav ul li a.active::before {
   content: "";
   width: 5px;
   height: 5px;
-  background: white;
+  background: var(--white);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -217,8 +231,8 @@ header .buttons {
   align-items: center;
   gap: 0.75rem;
 }
-header .buttons .btn {
-  width: 30px;
+header .buttons .btn-icon {
+  border: 0;
   border-radius: 5px;
 }
 header .buttons .btn-search {
@@ -228,14 +242,17 @@ header .buttons .btn-search {
   border: none;
   cursor: pointer;
 }
-header .buttons .btn-theme {
+header .buttons .btn-theme label {
   cursor: pointer;
   padding: 5px 7px;
   font-size: 1em;
   color: #08aef5;
-  background: white;
+  background: var(--white);
   border: none;
   border-radius: 5px;
+}
+header .buttons .btn-theme input {
+  display: none;
 }
 
 main #it-solutions {
@@ -244,7 +261,7 @@ main #it-solutions {
   background-size: cover;
 }
 main #it-solutions .container {
-  background: rgba(6, 8, 35, 0.6);
+  background: var(--dark-blue-05);
   display: grid;
   align-items: center;
   padding-top: 7rem;
@@ -300,7 +317,7 @@ main #it-solutions img {
 main #it-solutions .social-media a {
   margin-right: 1rem;
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 main #it-solutions .social-media a:hover {
   color: #08aef5;
@@ -311,7 +328,7 @@ main #it-solutions .btn-start {
 }
 main #it-solutions .btn-start:hover {
   background: #08aef5;
-  color: white;
+  color: var(--white);
 }
 main #it-solutions .buttons {
   display: flex;
@@ -356,11 +373,11 @@ main #services .card:hover::before {
   width: 100%;
 }
 main #services .card:hover .card-img svg path {
-  fill: white;
+  fill: var(--white);
   transition: fill 0.2s linear;
 }
 main #services .card:hover .btn {
-  color: white !important;
+  color: var(--white) !important;
 }
 main #services .card:hover img {
   filter: invert(0.5);
@@ -425,7 +442,7 @@ main #about-us .about-us .cards .card p {
   font-weight: 500;
 }
 main #about-us .about-us a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   background-color: #08aef5;
 }
@@ -500,6 +517,7 @@ main #our-work .our-work {
 }
 main #our-work .card {
   background: rgba(0, 0, 0, 0.3137254902);
+  color: white;
   text-align: center;
   border: 1px solid #08aef5;
   border-top-width: 5px;
@@ -534,10 +552,11 @@ main #portfolio .tabs .tab {
   position: relative;
   font-size: 18px;
 }
-main #portfolio .tabs .tab.active {
+main #portfolio .tabs .tab:hover, main #portfolio .tabs .tab.active {
   color: #08aef5;
+  cursor: pointer;
 }
-main #portfolio .tabs .tab.active::before {
+main #portfolio .tabs .tab:hover::before, main #portfolio .tabs .tab.active::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -566,6 +585,7 @@ main #portfolio .items .item-name {
   align-items: center;
   justify-content: start;
   gap: 1rem;
+  color: white;
   position: absolute;
   background: rgba(0, 0, 0, 0.3137254902);
 }
@@ -580,6 +600,7 @@ main #clients {
   padding: 4rem 0;
   text-align: center;
   background-color: #08aef5;
+  color: white;
 }
 main #clients .clients {
   margin-top: 3rem;
@@ -644,7 +665,7 @@ main #pricingplans .plans .card.best-plan button:hover {
 }
 main #pricingplans .plans .card.best-plan::after {
   content: "Most Popular";
-  background: white;
+  background: var(--white);
   color: #08aef5;
   width: 100%;
   font-size: 13px;
@@ -656,7 +677,7 @@ main #pricingplans .plans .card.best-plan::after {
   right: -90px;
 }
 main #pricingplans .plans .card.best-plan .plan-header::after {
-  background-color: white !important;
+  background-color: var(--white) !important;
 }
 main #pricingplans .plans .card .plan-header {
   position: relative;
@@ -705,7 +726,7 @@ main #pricingplans .plans .card .plan-details button {
 }
 main #pricingplans .plans .card .plan-details button:hover {
   background: #08aef5;
-  color: white;
+  color: var(--white);
 }
 main #testimonials {
   position: relative;
@@ -722,6 +743,7 @@ main #testimonials .container {
 }
 main #testimonials .header {
   text-align: center;
+  color: #fff;
 }
 main #testimonials .header > div:first-child {
   width: 100%;
@@ -777,6 +799,10 @@ main #testimonials .testimonial-container .testimonials .testimonial .testimonia
 main #testimonials .testimonial-container .testimonials .testimonial .testimonial-text {
   text-align: center;
   width: 50%;
+  color: white;
+}
+main #testimonials .testimonial-container .testimonials .testimonial .testimonial-author h4 {
+  color: white;
 }
 main #testimonials .testimonial-container .testimonials .testimonial .testimonial-author p {
   color: rgb(186, 190, 200);
@@ -816,7 +842,7 @@ main #blog .blog .card .card-header span {
   border-radius: 50px;
 }
 main #blog .blog .card .card-body {
-  background: rgb(7, 34, 64);
+  background: var(--blog-bg);
   padding: 1rem;
 }
 main #blog .blog .card .card-body .category-author a {
@@ -840,7 +866,7 @@ main #blog .blog .card .card-body .card-text p {
   color: rgb(186, 190, 200);
 }
 main #blog .blog .card .card-body .card-text a {
-  color: white;
+  color: var(--white);
 }
 main #blog .blog .card .card-body .card-text a:hover {
   color: #08aef5;
@@ -886,7 +912,7 @@ footer .footer form div input[type=email]::placeholder {
 footer .footer form div button {
   flex: 1;
   background-color: #08aef5;
-  color: white;
+  color: var(--white);
   height: 50px;
   border: 0;
   padding: 0 1rem;
@@ -929,7 +955,7 @@ footer .footer .contact-information > * {
   margin-bottom: 1rem;
 }
 footer .footer .contact-information div a {
-  color: white;
+  color: var(--white);
   background-color: #08aef5;
   display: grid;
   place-content: center;
@@ -939,7 +965,7 @@ footer .footer .contact-information div a {
 }
 footer .footer .contact-information .social-media a:hover {
   color: #08aef5;
-  background-color: white;
+  background-color: var(--white);
 }
 
 .copyright {
@@ -984,7 +1010,7 @@ footer .footer .contact-information .social-media a:hover {
     content: "";
     width: 5px;
     height: 5px;
-    background: white;
+    background: var(--white);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1002,7 +1028,7 @@ footer .footer .contact-information .social-media a:hover {
     top: 23px;
     transform: translateX(-50%);
     background: #08aef5;
-    color: white;
+    color: var(--white);
     text-align: center;
   }
   .dropdown-container .dropdown li {
@@ -1033,7 +1059,7 @@ footer .footer .contact-information .social-media a:hover {
   #about-us .card:hover .icon {
     transform: translateY(-10px);
     background: #08aef5;
-    color: white;
+    color: var(--white);
     transition: all 0.3s linear;
   }
   #our-work .our-work {
@@ -1063,7 +1089,6 @@ footer .footer .contact-information .social-media a:hover {
   }
   #portfolio .items .item:hover .item-name i:hover {
     background: #08aef5;
-    color: white;
     padding: 1rem 0.75rem;
   }
   .header .subtitle {
@@ -1099,7 +1124,7 @@ footer .footer .contact-information .social-media a:hover {
     position: relative;
   }
   header nav {
-    border-top: 3px solid rgb(6, 8, 35);
+    border-top: 3px solid var(--dark-blue);
     background: #08aef5;
     width: 100%;
     display: none;
@@ -1184,7 +1209,7 @@ footer .footer .contact-information .social-media a:hover {
     position: relative;
   }
   header nav {
-    border-top: 3px solid rgb(6, 8, 35);
+    border-top: 3px solid var(--dark-blue);
     background: #08aef5;
     width: 100%;
     display: none;

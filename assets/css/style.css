@@ -238,19 +238,19 @@ header .buttons .btn-theme {
   border-radius: 5px;
 }
 
-#it-solutions {
+main #it-solutions {
   background-image: url(../img/pattern-bg-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
-#it-solutions .container {
+main #it-solutions .container {
   background: rgba(6, 8, 35, 0.6);
   display: grid;
   align-items: center;
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
-#it-solutions .container .play-btn {
+main #it-solutions .container .play-btn {
   width: 50px;
   height: 50px;
   background-color: #08aef5;
@@ -262,23 +262,23 @@ header .buttons .btn-theme {
   z-index: 0;
   cursor: pointer;
 }
-#it-solutions .container .play-btn:hover {
+main #it-solutions .container .play-btn:hover {
   background-color: white;
 }
-#it-solutions .container .play-btn:hover i {
+main #it-solutions .container .play-btn:hover i {
   color: #08aef5;
 }
-#it-solutions .container .play-btn:hover::before, #it-solutions .container .play-btn:hover::after {
+main #it-solutions .container .play-btn:hover::before, main #it-solutions .container .play-btn:hover::after {
   background-color: white;
 }
-#it-solutions .container .play-btn::before {
+main #it-solutions .container .play-btn::before {
   animation-delay: 0.6s !important;
   background: rgba(8, 175, 245, 0.5);
 }
-#it-solutions .container .play-btn::after {
+main #it-solutions .container .play-btn::after {
   background: rgba(8, 175, 245, 0.5);
 }
-#it-solutions .container .play-btn::before, #it-solutions .container .play-btn::after {
+main #it-solutions .container .play-btn::before, main #it-solutions .container .play-btn::after {
   content: "";
   width: 50px;
   height: 50px;
@@ -288,37 +288,36 @@ header .buttons .btn-theme {
   animation: pulse 2s infinite linear;
   z-index: -10;
 }
-#it-solutions .title {
+main #it-solutions .title {
   font-weight: 900;
 }
-#it-solutions .subtitle {
+main #it-solutions .subtitle {
   padding: 1rem 0;
 }
-#it-solutions img {
+main #it-solutions img {
   max-width: 90%;
 }
-#it-solutions .social-media a {
+main #it-solutions .social-media a {
   margin-right: 1rem;
   text-decoration: none;
   color: white;
 }
-#it-solutions .social-media a:hover {
+main #it-solutions .social-media a:hover {
   color: #08aef5;
 }
-#it-solutions .btn-start {
+main #it-solutions .btn-start {
   background: transparent;
   color: #08aef5;
 }
-#it-solutions .btn-start:hover {
+main #it-solutions .btn-start:hover {
   background: #08aef5;
   color: white;
 }
-#it-solutions .buttons {
+main #it-solutions .buttons {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
 main #services {
   margin: 5rem 0;
 }
@@ -584,6 +583,16 @@ main #clients {
 }
 main #clients .clients {
   margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+main #clients .clients a {
+  animation: slide-left 16s 0.5s infinite ease-in-out;
+  transform: translateX(35rem);
 }
 main #clients .clients a img {
   width: 190px;
@@ -593,6 +602,9 @@ main #clients .clients a img {
 }
 main #clients .clients a:hover img {
   filter: grayscale(0);
+}
+main #clients .clients:hover a {
+  animation-play-state: paused;
 }
 main #pricingplans {
   margin: 3rem 0;
@@ -845,7 +857,7 @@ footer .container {
 footer .footer {
   display: grid;
   gap: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 footer .footer form {
   margin-top: 1rem;
@@ -929,8 +941,10 @@ footer .footer .contact-information .social-media a:hover {
   color: #08aef5;
   background-color: white;
 }
-footer .copyright {
-  margin-top: 3rem;
+
+.copyright {
+  background-color: #08aef5;
+  padding: 0.5rem 0;
   font-weight: 500;
   text-align: center;
 }
@@ -945,6 +959,17 @@ footer .copyright {
   100% {
     transform: scale(1.4);
     opacity: 0;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(35rem);
+  }
+  50% {
+    transform: translateX(-37rem);
+  }
+  100% {
+    transform: translateX(35rem);
   }
 }
 /*! desktop */

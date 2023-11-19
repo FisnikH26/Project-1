@@ -11,21 +11,23 @@
 }
 
 body {
-  background-color: var(--dark-blue);
-  color: var(--white);
+  background-color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 body:not(#theme-light:checked) {
-  --dark-blue: rgb(6, 8, 35);
-  --white: white;
-  --dark-blue-05: rgba(6, 8, 35, 0.6);
+  --main-color: rgb(6, 8, 35);
+  --secondary-color: white;
+  --main-color-05: rgba(6, 8, 35, 0.6);
+  --text-gray:rgb(186, 190, 200);
   --blog-bg: rgb(7, 34, 64);
 }
 
 body:has(#theme-light:checked) {
-  --dark-blue: white;
-  --white: rgb(6, 8, 35);
-  --dark-blue-05:rgba(255, 255, 255, 0.7);
+  --main-color: white;
+  --secondary-color: rgb(6, 8, 35);
+  --main-color-05:rgba(255, 255, 255, 0.7);
+  --text-gray:rgb(56, 57, 57);
   --blog-bg:rgb(219,242,253);
 }
 
@@ -106,7 +108,7 @@ a {
   font-weight: 500;
 }
 .header .subtitle {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
   font-weight: 500;
   margin-top: 1rem;
 }
@@ -157,7 +159,7 @@ a {
   padding-left: 0px;
 }
 .read-more:hover {
-  color: var(--white);
+  color: var(--secondary-color);
 }
 .read-more:hover i {
   transform: translateX(5px);
@@ -174,7 +176,7 @@ a {
   padding: 1rem;
   border-radius: 5px;
   background: #08aef5;
-  color: var(--white);
+  color: var(--secondary-color);
   z-index: 999;
   opacity: 0.5;
   box-shadow: 0px 0px 15px 5px rgba(6, 8, 35, 0.3);
@@ -215,7 +217,7 @@ header nav ul li a.active::before {
   content: "";
   width: 5px;
   height: 5px;
-  background: var(--white);
+  background: var(--secondary-color);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -247,7 +249,7 @@ header .buttons .btn-theme label {
   padding: 5px 7px;
   font-size: 1em;
   color: #08aef5;
-  background: var(--white);
+  background: var(--secondary-color);
   border: none;
   border-radius: 5px;
 }
@@ -261,7 +263,7 @@ main #it-solutions {
   background-size: cover;
 }
 main #it-solutions .container {
-  background: var(--dark-blue-05);
+  background: var(--main-color-05);
   display: grid;
   align-items: center;
   padding-top: 7rem;
@@ -317,7 +319,7 @@ main #it-solutions img {
 main #it-solutions .social-media a {
   margin-right: 1rem;
   text-decoration: none;
-  color: var(--white);
+  color: var(--secondary-color);
 }
 main #it-solutions .social-media a:hover {
   color: #08aef5;
@@ -328,7 +330,7 @@ main #it-solutions .btn-start {
 }
 main #it-solutions .btn-start:hover {
   background: #08aef5;
-  color: var(--white);
+  color: var(--secondary-color);
 }
 main #it-solutions .buttons {
   display: flex;
@@ -373,11 +375,11 @@ main #services .card:hover::before {
   width: 100%;
 }
 main #services .card:hover .card-img svg path {
-  fill: var(--white);
+  fill: var(--secondary-color);
   transition: fill 0.2s linear;
 }
 main #services .card:hover .btn {
-  color: var(--white) !important;
+  color: var(--secondary-color) !important;
 }
 main #services .card:hover img {
   filter: invert(0.5);
@@ -389,7 +391,7 @@ main #services .card .card-body {
   height: 100%;
 }
 main #services .card .card-body p {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
   font-weight: 500;
 }
 main #services .card .card-body .card-img {
@@ -438,11 +440,11 @@ main #about-us .about-us .cards .card h4 {
   font-size: 1.5em;
 }
 main #about-us .about-us .cards .card p {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
   font-weight: 500;
 }
 main #about-us .about-us a {
-  color: var(--white);
+  color: var(--secondary-color);
   text-decoration: none;
   background-color: #08aef5;
 }
@@ -665,7 +667,7 @@ main #pricingplans .plans .card.best-plan button:hover {
 }
 main #pricingplans .plans .card.best-plan::after {
   content: "Most Popular";
-  background: var(--white);
+  background: white;
   color: #08aef5;
   width: 100%;
   font-size: 13px;
@@ -673,11 +675,11 @@ main #pricingplans .plans .card.best-plan::after {
   text-align: center;
   transform: rotateZ(42deg);
   position: absolute;
-  top: 45px;
+  top: 35px;
   right: -90px;
 }
 main #pricingplans .plans .card.best-plan .plan-header::after {
-  background-color: var(--white) !important;
+  background-color: var(--secondary-color) !important;
 }
 main #pricingplans .plans .card .plan-header {
   position: relative;
@@ -701,7 +703,7 @@ main #pricingplans .plans .card .plan-header .plan-price sup {
   color: #08aef5;
 }
 main #pricingplans .plans .card .plan-header .subtext {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
   font-size: 1.2em;
   font-style: italic;
 }
@@ -726,7 +728,7 @@ main #pricingplans .plans .card .plan-details button {
 }
 main #pricingplans .plans .card .plan-details button:hover {
   background: #08aef5;
-  color: var(--white);
+  color: var(--secondary-color);
 }
 main #testimonials {
   position: relative;
@@ -805,7 +807,7 @@ main #testimonials .testimonial-container .testimonials .testimonial .testimonia
   color: white;
 }
 main #testimonials .testimonial-container .testimonials .testimonial .testimonial-author p {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
   text-align: center;
 }
 main #blog {
@@ -848,10 +850,10 @@ main #blog .blog .card .card-body {
 main #blog .blog .card .card-body .category-author a {
   padding: 0 10px;
   font-size: 13px;
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
 }
 main #blog .blog .card .card-body .category-author a:first-child {
-  border-right: 1px solid rgb(186, 190, 200);
+  border-right: 1px solid var(--text-gray);
   padding-left: 0;
 }
 main #blog .blog .card .card-body .category-author a:hover,
@@ -863,10 +865,10 @@ main #blog .blog .card .card-body .card-text .card-title {
   font-weight: 600;
 }
 main #blog .blog .card .card-body .card-text p {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
 }
 main #blog .blog .card .card-body .card-text a {
-  color: var(--white);
+  color: var(--secondary-color);
 }
 main #blog .blog .card .card-body .card-text a:hover {
   color: #08aef5;
@@ -884,6 +886,7 @@ footer .footer {
   display: grid;
   gap: 1rem;
   padding: 2rem 0;
+  color: white;
 }
 footer .footer form {
   margin-top: 1rem;
@@ -912,7 +915,7 @@ footer .footer form div input[type=email]::placeholder {
 footer .footer form div button {
   flex: 1;
   background-color: #08aef5;
-  color: var(--white);
+  color: white;
   height: 50px;
   border: 0;
   padding: 0 1rem;
@@ -921,7 +924,7 @@ footer .footer form div button {
   cursor: pointer;
 }
 footer .footer form .warning {
-  color: rgb(186, 190, 200);
+  color: var(--text-gray);
 }
 footer .footer .links,
 footer .footer .resourse {
@@ -955,7 +958,7 @@ footer .footer .contact-information > * {
   margin-bottom: 1rem;
 }
 footer .footer .contact-information div a {
-  color: var(--white);
+  color: var(--secondary-color);
   background-color: #08aef5;
   display: grid;
   place-content: center;
@@ -965,7 +968,7 @@ footer .footer .contact-information div a {
 }
 footer .footer .contact-information .social-media a:hover {
   color: #08aef5;
-  background-color: var(--white);
+  background-color: var(--secondary-color);
 }
 
 .copyright {
@@ -1010,7 +1013,7 @@ footer .footer .contact-information .social-media a:hover {
     content: "";
     width: 5px;
     height: 5px;
-    background: var(--white);
+    background: var(--secondary-color);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1028,7 +1031,7 @@ footer .footer .contact-information .social-media a:hover {
     top: 23px;
     transform: translateX(-50%);
     background: #08aef5;
-    color: var(--white);
+    color: var(--secondary-color);
     text-align: center;
   }
   .dropdown-container .dropdown li {
@@ -1124,7 +1127,7 @@ footer .footer .contact-information .social-media a:hover {
     position: relative;
   }
   header nav {
-    border-top: 3px solid var(--dark-blue);
+    border-top: 3px solid var(--main-color);
     background: #08aef5;
     width: 100%;
     display: none;
@@ -1209,7 +1212,7 @@ footer .footer .contact-information .social-media a:hover {
     position: relative;
   }
   header nav {
-    border-top: 3px solid var(--dark-blue);
+    border-top: 3px solid var(--main-color);
     background: #08aef5;
     width: 100%;
     display: none;

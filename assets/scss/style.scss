@@ -1,6 +1,6 @@
 $light-blue: #08aef5;
 $light-blue-50: rgba(8, 175, 245, 0.5);
-$light-gray: rgb(186, 190, 200);
+// var(--text-gray): rgb(186, 190, 200);
 
 :root {
   scroll-behavior: smooth;
@@ -13,19 +13,22 @@ $light-gray: rgb(186, 190, 200);
   font-family: "Jost", sans-serif;
 }
 body {
-  background-color: var(--dark-blue);
-  color: var(--white);
+  background-color: var(--main-color);
+  color: var(--secondary-color);
 }
 body:not(#theme-light:checked) {
-  --dark-blue: rgb(6, 8, 35);
-  --white: white;
-  --dark-blue-05: rgba(6, 8, 35, 0.6);
+  --main-color: rgb(6, 8, 35);
+  --secondary-color: white;
+  --main-color-05: rgba(6, 8, 35, 0.6);
+  --text-gray:rgb(186, 190, 200);
   --blog-bg: rgb(7, 34, 64);
 }
 body:has(#theme-light:checked) {
-  --dark-blue: white;
-  --white: rgb(6, 8, 35);
-  --dark-blue-05:rgba(255, 255, 255, 0.7);
+  --main-color: white;
+  --secondary-color: rgb(6, 8, 35);
+  --main-color-05:rgba(255, 255, 255, 0.7);
+  --text-gray:rgb(56, 57, 57);
+
   --blog-bg:rgb(219,242,253);
 
 }
@@ -103,7 +106,7 @@ a {
     font-weight: 500;
   }
   .subtitle {
-    color: $light-gray;
+    color: var(--text-gray);
     font-weight: 500;
     margin-top: 1rem;
   }
@@ -154,7 +157,7 @@ a {
   color: $light-blue;
   padding-left: 0px;
   &:hover {
-    color: var(--white);
+    color: var(--secondary-color);
     & i {
       transform: translateX(5px);
       transition: transform 0.3s linear !important;
@@ -172,7 +175,7 @@ a {
   padding: 1rem;
   border-radius: 5px;
   background: $light-blue;
-  color: var(--white);
+  color: var(--secondary-color);
   z-index: 999;
   opacity: 0.5;
   box-shadow: 0px 0px 15px 5px rgba(6, 8, 35, 0.3);
@@ -213,7 +216,7 @@ header {
             content: "";
             width: 5px;
             height: 5px;
-            background: var(--white);
+            background: var(--secondary-color);
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -250,7 +253,7 @@ header {
         padding: 5px 7px;
         font-size: 1em;
         color: $light-blue;
-        background: var(--white);
+        background: var(--secondary-color);
         border: none;
         border-radius: 5px;
       }
@@ -267,7 +270,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     .container {
-      background: var(--dark-blue-05);
+      background: var(--main-color-05);
       display: grid;
       align-items: center;
       padding-top: 7rem;
@@ -327,7 +330,7 @@ main {
       a {
         margin-right: 1rem;
         text-decoration: none;
-        color: var(--white);
+        color: var(--secondary-color);
         &:hover {
           color: $light-blue;
         }
@@ -338,7 +341,7 @@ main {
       color: $light-blue;
       &:hover {
         background: $light-blue;
-        color: var(--white);
+        color: var(--secondary-color);
       }
     }
 
@@ -392,12 +395,12 @@ main {
       }
       &:hover {
         .card-img svg path {
-          fill: var(--white);
+          fill: var(--secondary-color);
           transition: fill 0.2s linear;
         }
 
         .btn {
-          color: var(--white) !important;
+          color: var(--secondary-color) !important;
         }
         img {
           filter: invert(0.5);
@@ -409,7 +412,7 @@ main {
         justify-content: space-between;
         height: 100%;
         p {
-          color: $light-gray;
+          color: var(--text-gray);
           font-weight: 500;
         }
 
@@ -466,14 +469,14 @@ main {
             font-size: 1.5em;
           }
           p {
-            color: $light-gray;
+            color: var(--text-gray);
             font-weight: 500;
           }
         }
       }
 
       a {
-        color: var(--white);
+        color: var(--secondary-color);
         text-decoration: none;
         background-color: $light-blue;
         &:hover {
@@ -694,7 +697,7 @@ main {
           background: $light-blue;
           color: white;
           overflow: hidden;
-          position: relative;
+          position: relative; 
           &.best-plan .plan-header {
             border-bottom: 2px solid white;
           }
@@ -712,7 +715,7 @@ main {
 
           &::after {
             content: "Most Popular";
-            background: var(--white);
+            background: white;
             color: $light-blue;
             width: 100%;
             font-size: 13px;
@@ -720,11 +723,11 @@ main {
             text-align: center;
             transform: rotateZ(42deg);
             position: absolute;
-            top: 45px;
+            top: 35px;
             right: -90px;
           }
           & .plan-header::after {
-            background-color: var(--white) !important;
+            background-color: var(--secondary-color) !important;
           }
         }
         .plan-header {
@@ -749,7 +752,7 @@ main {
             }
           }
           .subtext {
-            color: $light-gray;
+            color: var(--text-gray);
             font-size: 1.2em;
             font-style: italic;
           }
@@ -773,7 +776,7 @@ main {
             color: $light-blue;
             &:hover {
               background: $light-blue;
-              color: var(--white);
+              color: var(--secondary-color);
             }
           }
         }
@@ -856,7 +859,7 @@ main {
               color: white;
             }
             p {
-              color: $light-gray;
+              color: var(--text-gray);
               text-align: center;
             }
           }
@@ -907,9 +910,9 @@ main {
             a {
               padding: 0 10px;
               font-size: 13px;
-              color: $light-gray;
+              color: var(--text-gray);
               &:first-child {
-                border-right: 1px solid $light-gray;
+                border-right: 1px solid var(--text-gray);
                 padding-left: 0;
               }
               &:hover,
@@ -924,10 +927,10 @@ main {
               font-weight: 600;
             }
             p {
-              color: $light-gray;
+              color: var(--text-gray);
             }
             a {
-              color: var(--white);
+              color: var(--secondary-color);
               &:hover {
                 color: $light-blue;
               }
@@ -950,7 +953,7 @@ footer {
     display: grid;
     gap: 1rem;
     padding: 2rem 0;
-
+    color: white;
     form {
       margin-top: 1rem;
       label {
@@ -973,7 +976,7 @@ footer {
         button {
           flex: 1;
           background-color: $light-blue;
-          color: var(--white);
+          color: white;
           height: 50px;
           border: 0;
           padding: 0 1rem;
@@ -983,7 +986,7 @@ footer {
         }
       }
       .warning {
-        color: $light-gray;
+        color: var(--text-gray);
       }
     }
     .links,
@@ -1019,7 +1022,7 @@ footer {
         margin-bottom: 1rem;
       }
       div a {
-        color: var(--white);
+        color: var(--secondary-color);
         background-color: $light-blue;
         display: grid;
         place-content: center;
@@ -1029,7 +1032,7 @@ footer {
       }
       .social-media a:hover {
         color: $light-blue;
-        background-color: var(--white);
+        background-color: var(--secondary-color);
       }
     }
   }
@@ -1077,7 +1080,7 @@ footer {
       content: "";
       width: 5px;
       height: 5px;
-      background: var(--white);
+      background: var(--secondary-color);
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -1095,7 +1098,7 @@ footer {
       top: 23px;
       transform: translateX(-50%);
       background: $light-blue;
-      color: var(--white);
+      color: var(--secondary-color);
       text-align: center;
       li {
         width: 150px;
@@ -1205,7 +1208,7 @@ footer {
   header {
     position: relative;
     nav {
-      border-top: 3px solid var(--dark-blue);
+      border-top: 3px solid var(--main-color);
       background: $light-blue;
       width: 100%;
       display: none;
@@ -1297,7 +1300,7 @@ footer {
   header {
     position: relative;
     nav {
-      border-top: 3px solid var(--dark-blue);
+      border-top: 3px solid var(--main-color);
       background: $light-blue;
       width: 100%;
       display: none;

@@ -11,24 +11,19 @@
 }
 
 body {
-  background-color: var(--main-color);
-  color: var(--secondary-color);
-}
-
-body:not(#theme-light:checked) {
   --main-color: rgb(6, 8, 35);
   --secondary-color: white;
   --main-color-05: rgba(6, 8, 35, 0.6);
-  --text-gray:rgb(186, 190, 200);
+  --text-gray: rgb(186, 190, 200);
   --blog-bg: rgb(7, 34, 64);
+  background-color: var(--main-color);
 }
-
 body:has(#theme-light:checked) {
   --main-color: white;
   --secondary-color: rgb(6, 8, 35);
-  --main-color-05:rgba(255, 255, 255, 0.7);
-  --text-gray:rgb(56, 57, 57);
-  --blog-bg:rgb(219,242,253);
+  --main-color-05: rgba(255, 255, 255, 0.7);
+  --text-gray: rgb(56, 57, 57);
+  --blog-bg: rgb(219, 242, 253);
 }
 
 .mobile-menubtn {
